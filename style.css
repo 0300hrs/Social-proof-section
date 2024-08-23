@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+:root {
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+}
+
+.pd-m {
+  padding: 15px 15px;
+}
+
+.pd-l {
+  padding: 15px 25px;
+}
+
+.d-m {
+  color: var(--Very-Dark-Magenta);
+}
+
+.s-p {
+  color: var(--Soft-Pink);
+}
+
+.l-m {
+  color: var(--Dark-Grayish-Magenta);
+}
+
+.l-g-m {
+  color: var(--Light-Grayish-Magenta);
+}
+
+.bg-dm {
+  background-color: var(--Very-Dark-Magenta);
+}
+
+.bg-lm {
+  background-color: var(--Light-Grayish-Magenta);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 15px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  align-items: center;
+  color: var(--White);
+  .head {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 780px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    text-align: left;
+    padding: 10px 50px;
+    align-items: center;
+  }
+  .head {
+    border: 2px solid blue;
+    width: 70%;
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  .ratings:nth-child(2) {
+    border: 2px solid red;
+  }
+  .reviews {
+    border: 2px solid red;
+    grid-column: 1/-1;
+    flex-direction: row !important;
+  }
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .rating {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    .stars {
+      display: flex;
+      gap: 5px;
+    }
+  }
+}
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  .review {
+    max-width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .profile {
+      display: flex;
+      gap: 20px;
+      img {
+        border-radius: 50%;
+        width: 45px;
+      }
+      .detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+      }
+    }
+  }
+}
