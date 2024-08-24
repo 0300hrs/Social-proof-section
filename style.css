@@ -42,10 +42,11 @@
 
 body {
   min-height: 100vh;
-
   font-family: "League Spartan", sans-serif;
   font-size: 15px;
+  display: flex;
   text-align: center;
+  justify-content: center;
   align-items: center;
   color: var(--White);
 }
@@ -60,68 +61,73 @@ body {
   }
 }
 /* desktop */
-@media (min-width: 769px) {
+@media (min-width: 1280px) {
+  body {
+    min-height: 100%;
+  }
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
     text-align: left;
-    padding: 10px 50px;
+    padding: 0 50px;
     align-items: center;
+    font-size: 1.25rem;
   }
   .head {
-    border: 2px solid blue;
-    width: 70%;
+    min-width: 80%;
     h2 {
       font-size: 2.5rem;
     }
     p {
-      font-size: 1.5rem;
+      width: 100%;
     }
   }
   .ratings {
-    border: 2px solid blue;
-  }
-  .reviews {
-    border: 2px solid red;
-    grid-column: 1/-1;
-    flex-direction: row !important;
-  }
-}
-/* tablet */
-@media (min-width: 0px) {
-  body {
-    padding: 0;
-    margin: 0;
-  }
-  .head {
-    border: 2px solid red;
-    h2 {
-      font-size: 2.5rem;
+    min-width: 100%;
+    font-size: 1.1rem;
+    .rating {
+      max-width: max-content;
+      flex-direction: row !important;
     }
-    p {
-      font-size: 1.5rem;
+    .start {
+      justify-self: start;
     }
-  }
-  .ratings {
-    border: 2px solid red;
-    width: 90%;
-    gap: 0px;
-    flex-direction: row !important;
+
+    .center {
+      justify-self: center;
+    }
+
+    .end {
+      justify-self: end;
+    }
   }
 
   .reviews {
-    border: 2px solid red;
-    width: 90%;
-    gap: 0px;
     grid-column: 1/-1;
-    flex-direction: row !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: 400px;
+    .start {
+      align-self: stretch !important;
+    }
+
+    .center {
+      margin-top: 10px;
+      align-self: center;
+    }
+
+    .end {
+      margin-top: 30px;
+      align-self: end;
+    }
   }
 }
 
 .ratings {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto auto;
   gap: 20px;
   .rating {
     max-width: 350px;
@@ -139,10 +145,11 @@ body {
 }
 .reviews {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  height: max-content;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   .review {
     max-width: 350px;
